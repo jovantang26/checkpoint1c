@@ -15,12 +15,14 @@ void setup() {
 }
 
 void draw() {
-  face(600, 400);
+  face(600, 400, 1.5); 
+  face(300, 200, 0.5); 
 }
 
-void face(int x, int y) {
+void face(int x, int y, float s) {
   pushMatrix();
   translate(x, y);
+  scale(s); 
   head(0, 0);
   eye(-75, -50, 75); //left
   eye(75, -50, 75); //right
@@ -47,9 +49,13 @@ void eye(int x, int y, int d) {
 }
 
 void nose() {
+  line(10, -20, -10, 20); 
+  line(-10, 20, 10, 25); 
 }
 
 void mouth () {
   fill(lips);
   arc(0, 75, 125, 125, 0, PI, CHORD); //arc(x, y, w, h, start angle, stop angle, mode); [advanced command]
 }
+
+ 
